@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
-  position: relative; /* Ensure relative positioning for the load more button */
+  justify-content: center; /* Center the cards horizontally */
 }
 
 .pokemon-card {
@@ -34,13 +34,13 @@
 }
 
 .pokemon-card-front {
-  background-color: #f0f0f0;
+  background-color: #48abab;
   border: 1px solid #ccc;
   transform: rotateY(0deg); /* Ensure front side is initially visible */
 }
 
 .pokemon-card-back {
-  background-color: #90caf9;
+  background-color: #534747;
   transform: rotateY(180deg); /* Initially hide the back side */
   color: white;
 }
@@ -56,10 +56,11 @@
   font-size: 18px;
 }
 
-.main{
+.main {
   position: relative;
   text-align: center;
 }
+
 .load-more-button {
   position: absolute;
   bottom: 20px; /* Adjust as needed */
@@ -92,3 +93,66 @@
     transform: rotate(360deg);
   }
 }
+
+.input_type{
+  width: 200px;
+  height: 19px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+    background-color: white;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+/* dropdown.css */
+
+.filter_type{
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+.select {
+  margin-bottom: 10px;
+}
+
+.select select {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none; /* Remove default arrow on some browsers */
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.select select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.select select option {
+  padding: 10px;
+  background-color: white;
+  color: #333;
+}
+
+.select select option:hover {
+  background-color: #f1f1f1;
+}
+
+.main_img img{
+  width: 400px;
+  height: 150px;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px ;
+}
+.main{
+  /* background-color: #007bff; */
+}
+

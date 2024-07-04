@@ -3,12 +3,17 @@ import axios from 'axios'
 import Card from './Card';
 import './App.css'
 import Dropdown from './Dropdown';
+// import ""
+
 
 function Home() {
   const[category , setcategory] = useState("all")
   const [pokemonList, setPokemonList] = useState([]);
+  const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
   const [offset, setOffset] = useState(0);
+
+  
 
   document.title = "pokemon " + category;
 
@@ -31,7 +36,7 @@ function Home() {
         
       
         const pokemonData = await Promise.all(pokemonDataPromises);
-        setPokemonList([...pokemonList, ...pokemonData]); // Append new data to existing list
+        setPokemonList([...pokemonList, ...pokemonData]); 
         
       
         setLoading(false);
@@ -43,35 +48,58 @@ function Home() {
     };
 
   fetchData();
-  }, [offset, category]); 
+  }, [offset]); 
+
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
+  };
+
+  useEffect(() => {
+    if (category === "all") {
+      setOffset(0);
+    }
+  }, [category]);
 
   const fetchMorePokemon = () => {
     setOffset(prevOffset => prevOffset + 20); 
   };
-  console.log(pokemonList);
+
+
+  const handleCategoryChange = (e) => {
+    const selectedCategory = e.target.value;
+    setcategory(selectedCategory);
+    // Optionally, you can filter here based on selectedCategory if needed immediately
+    // For now, let's filter in the Card component
+  };
+
   
-  const array = pokemonList;
+ 
   
-  console.log(array);
-
-
-  
-
-
-
-
-
 
 
   return (
     <div className='main'>
-      <h1>Pokemon Universe</h1>
+      <div className='main_img'><img src="/src/img/download.png" alt="" />
+      </div>
+      {/* <h1>Pokemon universe</h1> */}
+      <div>
+      <div className='filter_type'>
       <Dropdown title="Filter by type" 
-         options= {["fire" , "water"]}
-          func={(e)=>setcategory(e.target.value)}
+         options= {["all","fire" , "water", "normal" ,"ice","ground","flying","grass","rock","dragon","ghost","bug"]}
+          func={handleCategoryChange}
           category={category} />
-
-      <Card pokemonList={pokemonList} />
+          
+    <input
+          onChange={handleInputChange}
+          value={query}
+          className='input_type'
+          type="text"
+          placeholder='Search Pokémon by name'
+        />
+   
+      </div>
+</div>
+      <Card pokemonList={pokemonList}  category={category}  query={query}    />
       <button className='load-more-button' onClick={fetchMorePokemon}>
         Load More
       </button>

@@ -1,5 +1,5 @@
 
-
+import './App.css'
 const Dropdown = ({title,options, func}) => {
   return (
    <div className='select'>
