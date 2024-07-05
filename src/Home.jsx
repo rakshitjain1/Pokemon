@@ -3,6 +3,7 @@ import axios from 'axios'
 import Card from './Card';
 import './App.css'
 import Dropdown from './Dropdown';
+import logo from './img/download.png'
 // import ""
 
 
@@ -79,7 +80,7 @@ function Home() {
 
   return (
     <div className='main'>
-      <div className='main_img'><img src="/src/img/download.png" alt="" />
+      <div className='main_img'><img src={logo} alt="" />
       </div>
       {/* <h1>Pokemon universe</h1> */}
       <div>
