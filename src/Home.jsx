@@ -16,7 +16,7 @@ function Home() {
 
   
 
-  document.title = "pokemon " + category;
+  document.title = "pokemon" + category;
 
   useEffect(() => {
     const fetchData = async () => {

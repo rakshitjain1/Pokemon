@@ -41,7 +41,7 @@ h1,h2,h3,h4,h5,h5{
 }
 
 .pokemon-card-front {
-  background-color: #48abab;
+  background-color: #f6cf57;
   border: 1px solid #ccc;
   transform: rotateY(0deg); /* Ensure front side is initially visible */
 }
@@ -163,7 +163,5 @@ h1,h2,h3,h4,h5,h5{
   margin-top: 20px;
   margin-bottom: 20px ;
 }
-.main{
-  /* background-color: #007bff; */
-}
+
 
