@@ -47,7 +47,7 @@ h1,h2,h3,h4,h5,h5{
 }
 
 .pokemon-card-back {
-  background-color: #534747;
+  background-color:#0075be;
   transform: rotateY(180deg); /* Initially hide the back side */
   color: white;
   line-height: 15px;
@@ -77,7 +77,7 @@ h1,h2,h3,h4,h5,h5{
   bottom: 20px; /* Adjust as needed */
   right: 20px; /* Adjust as needed */
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #0075be;
   color: white;
   border: none;
   cursor: pointer;
@@ -110,19 +110,23 @@ h1,h2,h3,h4,h5,h5{
   height: 19px;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 3px solid #0075be;
     border-radius: 4px;
+
     appearance: none;
     background-color: white;
     cursor: pointer;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
+
+
 /* dropdown.css */
 
 .filter_type{
   display: flex;
   gap: 5px;
   justify-content: center;
+  
 }
 .select {
   margin-bottom: 10px;
@@ -132,7 +136,8 @@ h1,h2,h3,h4,h5,h5{
   width: 200px;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 3px solid #0075be;
+  color: gray;
   border-radius: 4px;
   appearance: none; /* Remove default arrow on some browsers */
   background-color: white;
